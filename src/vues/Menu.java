@@ -26,13 +26,13 @@ public class Menu extends JPanel implements Observer {
 	 */
 	private static final long serialVersionUID = 1L;
 	GrapheModele m;
-	private JButton efface = new JButton("effacer tout");
-	private JRadioButton kruskal = new JRadioButton("kruskal",true);
-	private JRadioButton prim = new JRadioButton("prim",false);
-	private JButton sansEtapes =new JButton("sans étapes");
-	private JButton grapheComplet =new JButton("Compléter");
-	private JButton precedent =new JButton("précédent");
-	private JButton suivant = new JButton("suivant");
+	private JButton efface = new JButton("Erase all");
+	private JRadioButton kruskal = new JRadioButton("Kruskal",true);
+	private JRadioButton prim = new JRadioButton("Prim",false);
+	private JButton sansEtapes =new JButton("Without steps");
+	private JButton grapheComplet =new JButton("Complete");
+	private JButton precedent =new JButton("Previous");
+	private JButton suivant = new JButton("Next");
 	private Image fondMenu;
 	private JComboBox choixTheme = new JComboBox();
 
@@ -41,7 +41,7 @@ public class Menu extends JPanel implements Observer {
 	Menu(GrapheModele m){
 		this.m=m;
 		m.addObserver(this);
-		this.setBackground(Color.GREEN);
+		this.setBackground(Color.LIGHT_GRAY);
 		this.setPreferredSize(new Dimension (150,700));	
 		MenuControleur mc = new MenuControleur(m,this);
 		/////////////////////////////////////////////////////////////////
@@ -51,13 +51,13 @@ public class Menu extends JPanel implements Observer {
 		prim.addItemListener(mc);
 		sansEtapes.addActionListener(mc);
 		sansEtapes.setActionCommand("algo");
-		precedent.setActionCommand("précédent");
+		precedent.setActionCommand("prï¿½cï¿½dent");
 		precedent.addActionListener(mc);
 		suivant.setActionCommand("suivant");
 		suivant.addActionListener(mc);
 		efface.setActionCommand("efface");
 		efface.addActionListener(mc);
-		grapheComplet.setActionCommand("compléter");
+		grapheComplet.setActionCommand("complï¿½ter");
 		grapheComplet.addActionListener(mc);
 		choixTheme.addItem("Maisons");
 		choixTheme.addItem("Ordinateurs");
